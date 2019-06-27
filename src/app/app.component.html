@@ -1,2 +1,8 @@
 <mat-checkbox class="example-margin">Checked</mat-checkbox>
 <button mat-raised-button (click)="openDialog()">Pick one</button>
+<ul>
+
+    <li *ngIf="animal">
+        you choose {{animal}}
+    </li>
+</ul>

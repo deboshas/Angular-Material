@@ -12,7 +12,7 @@ import { DialogData } from './dialouge-data';
 })
 export class AppComponent {
   title = 'Material';
-  animal: string = "tiger";
+  animal: string = "";
   name: string = "royal bengal";
   constructor(public dialog: MatDialog) {
 
@@ -20,29 +20,17 @@ export class AppComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialougeOverviewExampleComponent, {
-      width: '250px',
+      width: '350px',
       data: { name: this.name, animal: this.animal }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed', result);
       this.animal = result;
     });
   }
 }
 
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  templateUrl: 'dialouge-overview-example/dialouge-overview-example.component.html',
-})
-export class DialogOverviewExampleDialog {
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 
-}
