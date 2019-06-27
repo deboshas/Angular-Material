@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogData } from '../dialouge-data';
 
 
 
@@ -13,6 +14,7 @@ export class DialougeOverviewExampleComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<DialougeOverviewExampleComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) { }
 
 

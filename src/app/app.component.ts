@@ -2,10 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialougeOverviewExampleComponent } from './dialouge-overview-example/dialouge-overview-example.component';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+
 
 @Component({
   selector: 'app-root',
@@ -14,8 +11,8 @@ export interface DialogData {
 })
 export class AppComponent {
   title = 'Material';
-  animal: string;
-  name: string;
+  animal: string = "tiger";
+  name: string = "royal bengal";
   constructor(public dialog: MatDialog) {
 
   }
