@@ -6,3 +6,48 @@
         you choose {{animal}}
     </li>
 </ul>
+
+<br />
+dropdown
+
+
+<mat-form-field>
+    <mat-select style="width:1%">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<br />
+<mat-form-field>
+    <input matInput placeholder="Favorite food" value="Sushi" #username="ngModel" ngModel required>
+    <mat-hint>Type a user name</mat-hint>
+    <!-- <span matprefix>admin.</span>
+    <span matsuffix>@domain.com</span> -->
+
+    <mat-error *ngIf="username.invalid && username.errors.required">
+        Thus user name field is required
+    </mat-error>
+</mat-form-field>
+<br />
+<i class="material-icons">
+    today
+</i>
+
+<mat-form-field>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker touchUi="true"></mat-datepicker>
+</mat-form-field>
+
+
+<button mat-raised-button color="accent">Click me </button>
+
+<mat-spinner *ngIf="isloading" class="example-margin" [color]="primary" [mode]="Indeterminate" [value]="50">
+</mat-spinner>
+
+<mat-tab-group>
+    <mat-tab label="First"> Content 1 </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
